@@ -1,5 +1,6 @@
 package com.perity.taskmanager_api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,5 +29,8 @@ public class Tarefa {
     @JoinColumn(name = "pessoa_id")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @JsonBackReference
     private Pessoa pessoa;
+
+
 }

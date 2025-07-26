@@ -54,4 +54,18 @@ public class TarefaService {
         tarefa.setPessoa(pessoas.get(0)); // Aloca a primeira da lista
         return tarefaRepository.save(tarefa);
     }
+
+    @Transactional
+    public Tarefa finalizarTarefa(Long id) {
+        Tarefa tarefa = tarefaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+
+        if (tarefa.isFinalizada()) {
+            throw new RuntimeException("Tarefa já está finalizada");
+        }
+
+        tarefa.setFinalizada(true);
+        return tarefaRepository.save(tarefa);
+    }
+
 }

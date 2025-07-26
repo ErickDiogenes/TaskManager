@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
     List<Tarefa> findByPessoaIsNullOrderByPrazoAsc();
+    List<Tarefa> findTop3ByPessoaIsNullOrderByPrazoAsc();
+
 }

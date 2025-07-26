@@ -1,5 +1,6 @@
 package com.perity.taskmanager_api.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,8 @@ public class Pessoa {
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
     @ToString.Exclude // Evita loop infinito no toString()
-    @EqualsAndHashCode.Exclude // Evita problemas em comparações
+    @EqualsAndHashCode.Exclude // Evita problemas em comparaçõe
+    @JsonManagedReference
     private List<Tarefa> tarefas = new ArrayList<>();
+
 }
