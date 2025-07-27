@@ -124,4 +124,4 @@ Cobertura:
 
 ## ✍️ Autor
 
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario)
+Desenvolvido por [Erick Diogenes](https://github.com/ErickDiogenes)
